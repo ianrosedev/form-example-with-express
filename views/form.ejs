@@ -1,0 +1,34 @@
+<h1>axios ajax form</h1>
+
+<form role="form" class="form" id="form" onsubmit="return false;">
+  <div class="form-group">
+    <input type="text" id="form-data" class="form-control" placeholder="Write something here ... " ====autofocus >
+  </div>
+  <button id="post" type="submit" class="btn btn-primary">POST</button>
+</form>
+
+<h3 id="output" class="container"></h3>
+
+<script>
+(function() {
+  const output = document.getElementById('output');
+
+  document.getElementById('post').onclick = function() {
+    const user_data = document.getElementById('form-data').value;
+
+    // axios form POST hack, see docs
+    const params = new URLSearchParams();
+    params.append('user_data', user_data);
+
+    axios.post('/form', params)
+    .then(function(res) {
+      output.innerHTML = res.data.message;
+    })
+    .catch(function(err) {
+      output.innerHTML = err.message;
+    });
+
+    document.getElementById('form').reset();
+  };
+})();
+</script>
