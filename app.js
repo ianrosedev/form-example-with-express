@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // Fake DB
-let formData = [];
+const formData = [];
 
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
