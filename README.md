@@ -1,2 +1,2 @@
 # Form example using Axios & Express
-## Includes Babel to make ES6 > ES5
+## Includes Babel to make ES6 code into ES5
